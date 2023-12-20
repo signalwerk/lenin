@@ -12,7 +12,7 @@ local_backend: true
 # backend:
 #   name: test-repo
 site_url: "https://tst.org/"
-media_folder: assets/uploads
+media_folder: /public/assets/media
 # media_library:
 #   name: uploadcare
 #   folder_support: true
@@ -69,11 +69,7 @@ types:
             name: caption
             widget: string
             required: false
-          # - name: type
-          #   label: type
-          #   widget: text
-          #   default: image
-          #   required: false
+
       - label: Caption for all media items
         name: caption
         widget: string
@@ -82,6 +78,7 @@ types:
         name: class
         widget: string
         required: false
+
   refPage: &refPage
     label: Page reference
     name: ref_page
@@ -249,13 +246,12 @@ collections:
       #   name: body
       #   widget: markdown
       #   hint: Main content goes here.
-      - name: content
+      - name: children
         label: Content
         widget: list
         required: false
         # types: *base
-        types:
-          *baseExtended
+        types: *baseExtended
 
   # =================================================================================================
   # =================================================================================================
