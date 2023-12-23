@@ -1,12 +1,12 @@
-# backend:
-#   name: github
-#   repo: signalwerk/migros-gruppe-jobs.translate
-#   base_url: https://auth.signalwerk.workers.dev
-#   branch: master
-
 backend:
-  name: git-gateway
-local_backend: true
+  name: github
+  repo: signalwerk/lenin
+  base_url: https://auth.signalwerk.workers.dev
+  # branch: master
+
+# backend:
+#   name: git-gateway
+# local_backend: true
 
 # backend:
 #   name: test-repo
