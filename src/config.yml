@@ -59,6 +59,7 @@ types:
         name: children
         widget: list
         required: false
+        collapsed: false
         fields:
           - label: Image
             name: path
@@ -67,6 +68,10 @@ types:
             # multiple: true
           - label: Caption per Image
             name: caption
+            widget: string
+            required: false
+          - label: Alternative Text (accessibility)
+            name: alt
             widget: string
             required: false
 
@@ -111,6 +116,7 @@ base: &base
   - *media
   - *refPage
 
+
 grid: &grid
   label: Grid
   name: grid
@@ -120,6 +126,7 @@ grid: &grid
       name: children
       widget: list
       required: false
+      collapsed: false
       fields:
         # - label: Width
         #   name: cols
@@ -158,9 +165,36 @@ grid: &grid
           name: children
           # widget: list
           widget: list
+          collapsed: false
           types: *base
           required: false
 
+    - label: Grid Class
+      name: class
+      widget: string
+      required: false
+
+
+# define Anchor for all types
+# can be used with *base (Alias)
+baseBox: &baseBox
+  - *text
+  - *media
+  - *refPage
+  - *grid
+
+
+
+box: &box
+  label: Box
+  name: box
+  widget: object
+  fields:
+    - label: Content
+      name: children
+      widget: list
+      types: *baseBox
+      required: false
     - label: Grid Class
       name: class
       widget: string
@@ -172,6 +206,8 @@ baseExtended: &baseExtended
   - *text
   - *media
   - *refPage
+  - *box
+
 
 collections:
   - name: pages
@@ -250,6 +286,7 @@ collections:
         label: Content
         widget: list
         required: false
+        collapsed: false
         # types: *base
         types: *baseExtended
 

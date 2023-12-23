@@ -1,18 +1,17 @@
 {
   "name": "lenin",
   "version": "1.0.0",
-  "description": "lenin.ch",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx sdm start",
+    "dev": "npx sdm dev",
+    "build": "npx sdm build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "signalwerk.documentation.md": "file:packages/signalwerk.documentation.md"
-  }
+  },
+  "type": "module"
 }
