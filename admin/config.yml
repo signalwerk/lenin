@@ -1,17 +1,16 @@
+# backend:
+#   name: github
+#   repo: signalwerk/migros-gruppe-jobs.translate
+#   base_url: https://auth.signalwerk.workers.dev
+#   branch: master
+
 backend:
   name: git-gateway
-
-# when using the default proxy server port
 local_backend: true
-# local_backend:
-#   # when using a custom proxy server port
-#   url: http://localhost:8082/api/v1
-#   # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
-#   allowed_hosts: ['192.168.0.1']
 
 # backend:
 #   name: test-repo
-site_url: "https://tst.org/"
+site_url: "https://lenin.ch/"
 media_folder: /public/assets/media
 # media_library:
 #   name: uploadcare
@@ -116,7 +115,6 @@ base: &base
   - *media
   - *refPage
 
-
 grid: &grid
   label: Grid
   name: grid
@@ -174,7 +172,6 @@ grid: &grid
       widget: string
       required: false
 
-
 # define Anchor for all types
 # can be used with *base (Alias)
 baseBox: &baseBox
@@ -182,8 +179,6 @@ baseBox: &baseBox
   - *media
   - *refPage
   - *grid
-
-
 
 box: &box
   label: Box
@@ -207,7 +202,6 @@ baseExtended: &baseExtended
   - *media
   - *refPage
   - *box
-
 
 collections:
   - name: pages
