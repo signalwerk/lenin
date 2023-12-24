@@ -2,7 +2,7 @@ backend:
   name: github
   repo: signalwerk/lenin
   base_url: https://auth.signalwerk.workers.dev
-  # branch: master
+  branch: main
 
 # backend:
 #   name: git-gateway
