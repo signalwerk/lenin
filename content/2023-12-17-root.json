@@ -6,7 +6,7 @@
   "children": [
     {
       "type": "image",
-      "path": "/public/assets/media/lenin.svg",
+      "path": "/assets/media/lenin.svg",
       "alt": "Illustration V. I. Lenin",
       "class": "header"
     },
@@ -25,7 +25,7 @@
     {
       "type": "image",
       "alt": "Logo Marxistisch-Leninistische Gruppe Schweiz",
-      "path": "/public/assets/media/logo.png",
+      "path": "/assets/media/logo.png",
       "class": "logo"
     },
     {

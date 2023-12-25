@@ -10,6 +10,8 @@ backend:
 
 site_url: "https://lenin.ch/"
 media_folder: /public/assets/media
+public_folder: "/assets/media"
+
 # media_library:
 #   name: uploadcare
 #   folder_support: true
