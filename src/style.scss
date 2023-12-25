@@ -9,10 +9,8 @@
   font-size: 16px;
 
   color: white;
-}
 
-@media (min-width: 768px) {
-  :root {
+  @media (min-width: 768px) {
     font-size: 20px;
   }
 }
@@ -51,8 +49,9 @@ h4 + h2 {
   margin-top: 0.1em;
 }
 
-.text,
-.grid {
+.node-image:not(.header),
+.node-text,
+.node-grid {
   width: 94%;
   margin: 0 auto;
 
@@ -61,51 +60,40 @@ h4 + h2 {
   }
 }
 
-.page {
+.node-page {
   padding-bottom: 6em;
 }
 
-.header + .text {
+.header + .node-text {
   margin-top: -25vw;
   background-color: var(--color-red);
   position: relative;
   padding-top: 1vw;
-
-  //   @media (min-width: 80rem) {
-  //     margin-top: -20rem;
-  //   }
 }
 
 img {
   width: 100%;
   display: block;
-  height: auto;
 }
 
 :root {
-  --grid--grid-template-columns--count: 12;
+  --node-gird--count: 12;
+  --node-grid-column--count: 1;
 }
 
-.grid {
+.node-grid {
   display: var(--grid--display, grid);
-  grid-template-columns: repeat(var(--grid--grid-template-columns--count), 1fr);
+  grid-template-columns: repeat(var(--node-gird--count), 1fr);
   grid-column-gap: var(--grid--grid-column-gap, 1.5rem);
 }
 
-:root {
-  --grid-column--grid-column--count: 1;
+.node-grid-column {
+  grid-column: span var(--node-grid-column--count);
 }
 
-
-
-
-.grid-column {
-  grid-column: span var(--grid-column--grid-column--count);
-  /* width: 100%; */
-  /* overflow: hidden; */
+.logo img {
+  width: 40%;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 }
-
-// .page {
-//   max-width: 80rem;
-//   padding-left: calc(100% - 80rem);
-// }
