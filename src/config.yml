@@ -1,12 +1,12 @@
-backend:
-  name: github
-  repo: signalwerk/lenin
-  base_url: https://auth.signalwerk.workers.dev
-  branch: main
-
 # backend:
-#   name: git-gateway
-# local_backend: true
+#   name: github
+#   repo: signalwerk/lenin
+#   base_url: https://auth.signalwerk.workers.dev
+#   branch: main
+
+backend:
+  name: git-gateway
+local_backend: true
 
 site_url: "https://lenin.ch/"
 media_folder: /public/assets/media
@@ -268,10 +268,6 @@ collections:
         name: description
         widget: string
         required: false
-      # - label: Body
-      #   name: body
-      #   widget: markdown
-      #   hint: Main content goes here.
       - name: children
         label: Content
         widget: list
@@ -289,59 +285,26 @@ collections:
     editor:
       preview: false
     files:
-      - name: general
-        label: Site Settings
-        file: _data/settings.json
-        description: General Site Settings
+      - name: settings
+        label: Settings
+        file: src/settings.json
         fields:
-          - label: Number of posts on frontpage
-            name: front_limit
-            widget: number
-            min: 1
-            max: 10
-          - label: Global title
-            name: site_title
-            widget: string
-          - label: Post Settings
-            name: posts
+          - label: Page
+            name: page
             widget: object
+            required: false
             fields:
-              - label: Number of posts on frontpage
-                name: front_limit
-                widget: number
-                min: 1
-                max: 10
-              - label: Default Author
-                name: author
-                widget: string
-              - label: Default Thumbnail
-                name: thumb
-                widget: image
+              - label: Head
+                name: head
+                widget: object
                 required: false
-      - name: authors
-        label: Authors
-        file: _data/authors.yml
-        description: Author descriptions
-        editor:
-          preview: true
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: Author
-            widget: list
-            fields:
-              - label: Name
-                name: name
-                widget: string
-                hint: First and Last
-              - label: Description
-                name: description
-                widget: text
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
-  # =================================================================================================
+                fields:
+                  - label: stylesheets
+                    name: stylesheets
+                    widget: list
+                    required: false
+                    collapsed: false
+                    fields:
+                      - label: Path
+                        name: path
+                        widget: string
