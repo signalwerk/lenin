@@ -296,6 +296,14 @@ collections:
             widget: object
             required: false
             fields:
+              - label: HTML
+                name: html
+                widget: object
+                required: false
+                fields:
+                  - label: Default language
+                    name: lang
+                    widget: string
               - label: Head
                 name: head
                 widget: object
