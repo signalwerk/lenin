@@ -60,12 +60,22 @@ h4 + h2 {
   }
 }
 
+.node-image.header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  img {
+    max-width: 70em;
+  }
+}
+
 .node-page {
   padding-bottom: 6em;
 }
 
 .header + .node-text {
-  margin-top: -25vw;
+  margin-top: max(-25vw, -17rem);
   background-color: var(--color-red);
   position: relative;
   padding-top: 1vw;
